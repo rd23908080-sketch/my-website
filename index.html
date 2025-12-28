@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Important System Control</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: white;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .warning {
+      font-size: 100px;
+      color: #facc15;
+      margin-bottom: 20px;
+    }
+
+    .main-button {
+      background: #7f1d1d;
+      border: 3px solid #ef4444;
+      color: white;
+      padding: 20px 40px;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .main-button:hover {
+      background: #991b1b;
+    }
+
+    .fake-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .fake-button {
+      background: #111827;
+      border: 2px solid #374151;
+      color: #9ca3af;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: not-allowed;
+      border-radius: 6px;
+    }
+
+    iframe {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="warning">⚠️</div>
+
+    <button class="main-button" onclick="rickroll()">
+      IMPORTANT BUTTON
+    </button>
+
+    <div class="fake-buttons">
+      <div class="fake-button">SYSTEM OVERRIDE</div>
+      <div class="fake-button">EMERGENCY LOCK</div>
+      <div class="fake-button">DO NOT PRESS</div>
+    </div>
+
+    <!-- Rickroll -->
+    <iframe
+      id="rick"
+      width="560"
+      height="315"
+      src=""
+      frameborder="0"
+      allow="autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <script>
+    function rickroll() {
+      const iframe = document.getElementById("rick");
+      iframe.style.display = "block";
+      iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+    }
+  </script>
+
+</body>
+</html>
