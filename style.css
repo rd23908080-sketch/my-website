@@ -1,0 +1,84 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, Arial, sans-serif;
+  background: #06202a;
+}
+
+canvas {
+  display: block;
+}
+
+.hud {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  color: #ffe66d;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+  z-index: 5;
+  user-select: none;
+}
+
+.hint {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 10;
+}
+
+.overlay.show { display: grid; }
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,230,109,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border-radius: 0;
+  padding: 18px 22px;
+  color: #ffe66d;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Hotbar (center bottom) */
+.hotbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.35);
+  border: 2px solid rgba(120,120,120,0.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  border-radius: 0;
+  z-index: 8;
+}
+.hotbar .slot {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(128,128,128,0.28);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+.hotbar .slot.selected {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 0;
+}
+.hotbar .slot canvas, .hotbar .slot .swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+}
